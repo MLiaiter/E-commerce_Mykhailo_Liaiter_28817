@@ -1,8 +1,74 @@
-#ProductsTable {
-  img {
-    width: 180px;
-  }
-  td {
-    padding: 20px;
-  }
+@import "node_modules/pixel-borders/src/styles/pixel-borders.scss";
+.products {
+  background: linear-gradient(#f6fafd, #9966ff);
+}
+.con2 {
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  flex-basis: 30%;
+  min-width: 250px;
+  margin-bottom: 30px;
+}
+img {
+  width: 100%;
+}
+#resize {
+  width: 25%;
+}
+.title {
+  font-size: 50px;
+  text-align: center;
+  margin: 0 auto 50px;
+  position: relative;
+  line-height: 60px;
+  color: #476b6b;
+  font-family: "Tagala", sans-serif;
+}
+.title::after {
+  content: "";
+  background: #ccf5ff;
+  width: 150px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+button {
+  @include pixel-box(
+    $corner-size: 2,
+    $border-size: 4px,
+    $background-color: #ccf5ff,
+    $border-color: #4080bf,
+    $border-inset: false,
+    $border-inset-size: false,
+    $border-inset-color: false,
+    $border-inset-sides: false,
+    $border-inset-color-br: false,
+    $border-inset-color-tl: false
+  );
+  font-family: "Tagala", sans-serif;
+  font-size: 20px;
+  background-color: #ccf5ff;
+  color: #527a7a;
+  border-radius: 10px;
+  line-height: 30px;
+}
+tbody li {
+  font-size: 25px;
+  font-family: "Shaak Sans", sans-serif;
+}
+tr {
+  transition: transform 0.5s;
+}
+tr:hover {
+  transform: translateY(-5px);
 }

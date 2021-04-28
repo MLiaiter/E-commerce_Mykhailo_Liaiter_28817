@@ -1,15 +1,39 @@
-<div>
-    <div style="display: flex;flex-direction: row;">
-        <img src="https://via.placeholder.com/100" alt="">
-        <h2>Sklep z softłerem</h2>
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="logo">
+            <img src="https://i.postimg.cc/XqnFXYGy/Pngtree-colorful-video-game-console-joystick-3570051.png" alt="sindorei"
+              height="200">
+          </div>
+          <button class="navbar-toggler collapsed " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item"><button class="nav-link" routerLink="/adm_dashboard" class="pixel-box">
+                    <p> - Panel Administrrrrratora - </p>
+                  </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link pixel-box" id="cartBtn" routerLink="/cart" style="min-width: 30px;">
+                  <p>{{getCartQuanity()}}</p>
+                </button>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" [(ngModel)]="this.mainService.productsRequest.name" style="height: 40px;"
+                    class="pixel-box" placeholder="Search" aria-label="Search">
+              <button class="btn my-2 my-sm-0 pixel-box" (click)="this.mainService.getProducts(this.mainService.productsRequest)"
+                    routerLink="/products"><p>Szukaj Produktu</p></button>
+            </form>
+          </div>
+        </nav>
+      <div class="row">
+        <div class="col-2">
+          <h1>Choose the world</h1>
+          <p>...and explore it</p>
+        </div>
+      </div>
     </div>
-    <div style="display: flex; justify-content: center;">
-        <input type="text" [(ngModel)]="this.mainService.productsRequest.name">
-        <button (click)="this.mainService.getProducts(this.mainService.productsRequest)" routerLink="/products">Szukaj Produktu</button>
-    </div>
-    <div>
-      <button id="cartBtn" routerLink="/cart">
-        {{getCartQuanity()}}
-      </button>
-    </div>
-</div>
+  </div>

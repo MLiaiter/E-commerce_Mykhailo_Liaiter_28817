@@ -1,34 +1,28 @@
 <app-panel-top></app-panel-top>
-
-<button routerLink="/landing">Powrót</button>
-
 <div class="products">
-    <table style="margin:0 auto;" id="ProductsTable">
-        <thead *ngIf="this.mainService.products">
-            <tr>
-                <th>obrazek</th>
-                <th>dane</th>
-                <th>akcje</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let product of this.mainService.products?.productsTable">
-              <tr style="background-color: whitesmoke;">
-                <td><img src="{{product.thumbnail}}" alt=""></td>
-                <td>
-                  <ul>
-                    <li>Tytuł: {{product.title}}</li>
-                    <li>Cena: {{product.price}}</li>
-                    <li>Kategoria: {{product.category}}</li>
-                  </ul>
-                </td>
-                <td>
-                  <button (click)="addToCart(product)">Do koszyka</button>
-                </td>
-              </tr>
-            </ng-container>
-
-
-        </tbody>
+  <div class="con2">
+    <button routerLink="/landing" class="pixel-box">Powrót</button>
+    <h2 class="title">GAMES</h2>
+    <table id="ProductsTable">
+      <thead *ngIf="this.mainService.products">
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let product of this.mainService.products?.productsTable">
+          <tr style="background-color: whitesmoke;">
+            <td><img src="{{product.thumbnail}}" alt=""></td>
+            <td id="resize">
+              <ul>
+                <li>Tytuł: {{product.title}}</li>
+                <li>Cena: {{product.price}}</li>
+                <li>Kategoria: {{product.category}}</li>
+              </ul>
+            </td>
+            <td>
+              <button (click)="addToCart(product)" class="pixel-box">Do koszyka</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
     </table>
-</div>
+    </div>
+  </div>
